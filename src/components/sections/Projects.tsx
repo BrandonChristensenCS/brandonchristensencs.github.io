@@ -11,7 +11,7 @@ export default function Projects() {
       title: 'Portfolio Website',
       description: 'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.',
       imageSrc: 'https://source.unsplash.com/random/800x600/?portfolio',
-      tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Hosted on GitHub Pages'],
       githubUrl: 'https://github.com/brandonchristensencs/brandonchristensencs.github.io',
     },
     {

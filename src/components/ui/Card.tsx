@@ -33,7 +33,7 @@ export default function Card({
   const renderStoreButton = (icon: string, url: string, label: string) => {
     const baseBtn =
       "flex items-center justify-center h-11 px-4 rounded-md shadow border text-sm font-medium transition-colors" +
-      " bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 border-gray-300 dark:border-gray-600 min-w-[10rem]";
+      " bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 border-gray-300 dark:border-gray-600 min-w-0 flex-shrink w-full sm:w-auto";
     if (icon === 'googleplay') {
       return (
         <a
@@ -46,9 +46,9 @@ export default function Card({
           <span className="mr-2 flex items-center">
             <GooglePlayIcon className="w-5 h-5" />
           </span>
-          <span className="flex flex-col items-start leading-tight">
-            <span className="text-[10px]">GET IT ON</span>
-            <span className="-mt-0.5 font-sans text-base font-semibold">Google Play</span>
+          <span className="flex flex-col items-center leading-tight truncate w-full">
+            <span className="text-[10px] truncate w-full whitespace-nowrap text-center">GET IT ON</span>
+            <span className="-mt-0.5 font-sans text-base font-semibold truncate w-full whitespace-nowrap sm:text-base text-xs text-center">Google Play</span>
           </span>
         </a>
       );
@@ -65,9 +65,9 @@ export default function Card({
           <span className="mr-2 flex items-center">
             <AppleAppStoreIcon className="w-5 h-5" />
           </span>
-          <span className="flex flex-col items-start leading-tight">
-            <span className="text-[10px]">Download on the</span>
-            <span className="-mt-0.5 font-sans text-base font-semibold">App Store</span>
+          <span className="flex flex-col items-center leading-tight truncate w-full">
+            <span className="text-[10px] truncate w-full whitespace-nowrap text-center">Download on the</span>
+            <span className="-mt-0.5 font-sans text-base font-semibold truncate w-full whitespace-nowrap sm:text-base text-xs text-center">App Store</span>
           </span>
         </a>
       );
@@ -88,19 +88,21 @@ export default function Card({
         href={githubUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center h-11 px-4 text-sm font-medium rounded-md bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 transition-colors min-w-[10rem] justify-center shadow border border-gray-300 dark:border-gray-600"
+        className="flex items-center h-11 px-4 text-sm font-medium rounded-md bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 transition-colors min-w-0 flex-shrink w-full sm:w-auto justify-center shadow border border-gray-300 dark:border-gray-600"
         aria-label="View source code on GitHub"
       >
-        <GitHubIcon className="w-4 h-4 mr-2" />
-        See Code
+        <GitHubIcon className="w-6 h-6 mr-2" />
+        <span className="truncate w-full whitespace-nowrap text-center">Source Code</span>
       </a>
     );
   }
   storeLinks.forEach((link, idx) => {
     buttons.push(
-      <React.Fragment key={link.icon + idx}>
-        {renderStoreButton(link.icon!, link.url, link.label)}
-      </React.Fragment>
+      renderStoreButton(link.icon!, link.url, link.label) &&
+      React.cloneElement(
+        renderStoreButton(link.icon!, link.url, link.label) as React.ReactElement,
+        { key: `${link.icon}-${link.url}` }
+      )
     );
   });
   if (storeLinks.length === 0 && externalLinks.length === 1) {
@@ -110,11 +112,11 @@ export default function Card({
         href={externalLinks[0].url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center h-11 px-4 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors min-w-[10rem] justify-center shadow border border-blue-700 dark:border-blue-400"
+        className="flex items-center h-11 px-4 text-sm font-medium rounded-md bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 transition-colors min-w-0 flex-shrink w-full sm:w-auto justify-center shadow border border-gray-300 dark:border-gray-600"
         aria-label={externalLinks[0].label}
       >
-        <ExternalLinkIcon className="w-4 h-4 mr-2" />
-        {externalLinks[0].label}
+        <ExternalLinkIcon className="w-5 h-5 mr-2" />
+        <span className="truncate w-full whitespace-nowrap text-center">{externalLinks[0].label}</span>
       </a>
     );
   }
@@ -157,11 +159,14 @@ export default function Card({
           ))}
         </div>
 
-        <div className={`flex w-full gap-4 mt-auto items-center ${buttons.length > 1 ? 'justify-between' : 'justify-start'}`}>
+        <div className="flex flex-wrap gap-4 mt-auto items-center w-full sm:flex-nowrap sm:gap-4 sm:justify-between">
           {buttons.map((btn, idx) => (
-            <div key={idx}>
-              {btn}
-            </div>
+            React.isValidElement(btn)
+              ? React.cloneElement(btn, {
+                  className: `${btn.props.className ?? ''} min-w-0 flex-1 w-full sm:w-auto`,
+                  key: btn.key ?? idx,
+                })
+              : btn
           ))}
         </div>
       </div>

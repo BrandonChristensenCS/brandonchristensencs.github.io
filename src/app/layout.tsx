@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Brandon Christensen | Portfolio",
-  description: "Personal portfolio for Brandon Christensen, a computer science student and software engineer.",
+  description: "Personal portfolio for Brandon Christensen, a software engineer.",
   authors: [{ name: "Brandon Christensen" }],
-  keywords: ["Portfolio", "Developer", "Software Engineer", "Web Development", "React", "Next.js"],
+  keywords: ["Portfolio", "Developer", "Software Engineer", "Android Engineer", "Web Development", "Next.js", "Tailwind CSS"],
 };
 
 export default function RootLayout({
@@ -27,9 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <head>
-        {/* Removed Tailwind CDN and inline config. Tailwind is loaded via globals.css and local config. */}
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300`}
       >
