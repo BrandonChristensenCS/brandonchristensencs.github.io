@@ -13,7 +13,6 @@ export default function Projects() {
       imageSrc: 'https://source.unsplash.com/random/800x600/?portfolio',
       tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
       githubUrl: 'https://github.com/brandonchristensencs/brandonchristensencs.github.io',
-      liveUrl: '#', // TODO: Replace with https://brandonchristensencs.github.io
     },
     {
       id: 2,
@@ -22,16 +21,33 @@ export default function Projects() {
       imageSrc: 'https://source.unsplash.com/random/800x600/?weather',
       tags: ['Android', 'Kotlin', 'Jetpack Compose', 'API Integration'],
       githubUrl: 'https://github.com/BrandonChristensenCS/nws-weather',
-      liveUrl: '#',
+      liveUrl: [
+        {
+          url: 'https://play.google.com/store/apps/details?id=com.brandonchristensen.nwsweather',
+          label: 'Google Play',
+          icon: 'googleplay',
+        },
+      ],
     },
     {
       id: 3,
       title: 'Task Management App',
       description: 'A react-native productivity application for managing timesheets and tasks.',
       imageSrc: 'https://source.unsplash.com/random/800x600/?productivity',
-      tags: ['React-Native', 'Android', 'iOS', ''],
+      tags: ['React-Native', 'Android', 'iOS'],
       githubUrl: 'https://github.com/brandonchristensencs',
-      liveUrl: '#',
+      liveUrl: [
+        {
+          url: 'https://play.google.com/store/apps/details?id=com.example.taskmanager',
+          label: 'Google Play',
+          icon: 'googleplay',
+        },
+        {
+          url: 'https://apps.apple.com/app/id1234567890',
+          label: 'App Store',
+          icon: 'appstore',
+        },
+      ],
     },
     {
       id: 4,
@@ -40,7 +56,13 @@ export default function Projects() {
       imageSrc: 'https://source.unsplash.com/random/800x600/?ecommerce',
       tags: ['React', 'Node.js', 'MongoDB'],
       githubUrl: 'https://github.com/brandonchristensencs',
-      liveUrl: '#',
+      liveUrl: [
+        {
+          url: 'https://example.com',
+          label: 'Check It Out',
+          icon: 'external',
+        },
+      ],
     },
   ];
 
