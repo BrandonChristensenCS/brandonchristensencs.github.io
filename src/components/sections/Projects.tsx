@@ -8,38 +8,38 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform with user authentication, product management, and payment processing.',
-      imageSrc: 'https://source.unsplash.com/random/800x600/?ecommerce',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      githubUrl: 'https://github.com/brandonchristensencs',
-      liveUrl: '#',
-    },
-    {
-      id: 2,
-      title: 'Task Management App',
-      description: 'A productivity application for managing tasks, featuring drag-and-drop UI, filtering, and real-time updates.',
-      imageSrc: 'https://source.unsplash.com/random/800x600/?productivity',
-      tags: ['TypeScript', 'React', 'Firebase', 'Tailwind'],
-      githubUrl: 'https://github.com/brandonchristensencs',
-      liveUrl: '#',
-    },
-    {
-      id: 3,
-      title: 'Weather Dashboard',
-      description: 'An interactive weather dashboard that displays current and forecast weather data using a third-party API.',
-      imageSrc: 'https://source.unsplash.com/random/800x600/?weather',
-      tags: ['JavaScript', 'API Integration', 'CSS3', 'Responsive Design'],
-      githubUrl: 'https://github.com/brandonchristensencs',
-      liveUrl: '#',
-    },
-    {
-      id: 4,
       title: 'Portfolio Website',
       description: 'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.',
       imageSrc: 'https://source.unsplash.com/random/800x600/?portfolio',
       tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
       githubUrl: 'https://github.com/brandonchristensencs/brandonchristensencs.github.io',
+      liveUrl: '#', // TODO: Replace with https://brandonchristensencs.github.io
+    },
+    {
+      id: 2,
+      title: 'NWS Weather',
+      description: 'An interactive Android app & Widget that displays information from the National Weather Service\'s third-party API.',
+      imageSrc: 'https://source.unsplash.com/random/800x600/?weather',
+      tags: ['Android', 'Kotlin', 'Jetpack Compose', 'API Integration'],
+      githubUrl: 'https://github.com/BrandonChristensenCS/nws-weather',
+      liveUrl: '#',
+    },
+    {
+      id: 3,
+      title: 'Task Management App',
+      description: 'A react-native productivity application for managing timesheets and tasks.',
+      imageSrc: 'https://source.unsplash.com/random/800x600/?productivity',
+      tags: ['React-Native', 'Android', 'iOS', ''],
+      githubUrl: 'https://github.com/brandonchristensencs',
+      liveUrl: '#',
+    },
+    {
+      id: 4,
+      title: 'Placeholder Project',
+      description: 'A placeholder project description.',
+      imageSrc: 'https://source.unsplash.com/random/800x600/?ecommerce',
+      tags: ['React', 'Node.js', 'MongoDB'],
+      githubUrl: 'https://github.com/brandonchristensencs',
       liveUrl: '#',
     },
   ];
@@ -72,7 +72,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex"
+              className="flex w-full h-full"
             >
               <Card
                 title={project.title}
@@ -81,6 +81,7 @@ export default function Projects() {
                 tags={project.tags}
                 githubUrl={project.githubUrl}
                 liveUrl={project.liveUrl}
+                className="w-full h-full flex flex-col"
               />
             </motion.div>
           ))}

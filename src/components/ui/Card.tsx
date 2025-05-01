@@ -20,10 +20,11 @@ export default function Card({
   tags,
   liveUrl,
   githubUrl,
-}: CardProps) {
+  className = '', // add className prop with default
+}: CardProps & { className?: string }) {
   return (
     <motion.div
-      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+      className={`bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -44,7 +45,7 @@ export default function Card({
         )}
       </div>
 
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{title}</h3>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
 
@@ -59,7 +60,7 @@ export default function Card({
           ))}
         </div>
 
-        <div className="flex justify-between mt-4">
+        <div className="flex justify-between mt-auto">
           {githubUrl && (
             <a
               href={githubUrl}
