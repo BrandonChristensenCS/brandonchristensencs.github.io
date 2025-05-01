@@ -35,12 +35,6 @@ export default function Header() {
             >
               Projects
             </Link>
-            <Link
-              href="#contact"
-              className="px-3 py-2 font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              Contact
-            </Link>
             <div className="ml-3">
               <ThemeToggle />
             </div>
@@ -88,13 +82,6 @@ export default function Header() {
               className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               Projects
-            </Link>
-            <Link
-              href="#contact"
-              onClick={toggleMenu}
-              className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              Contact
             </Link>
           </div>
         </div>

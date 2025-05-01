@@ -23,7 +23,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Computer Science student and aspiring software engineer specializing in building exceptional digital experiences.
+            Software engineer specializing in building exceptional digital experiences.
           </motion.p>
 
           <motion.div
@@ -43,18 +43,6 @@ export default function Hero() {
               }}
             >
               View Projects
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Get in Touch
             </Button>
           </motion.div>
         </div>

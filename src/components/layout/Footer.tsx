@@ -29,13 +29,13 @@ export default function Footer() {
             >
               <LinkedInIcon className="w-6 h-6" />
             </SocialLink>
+            <SocialLink
+              href="mailto:brandon.christensen.cs@gmail.com"
+              aria-label="Email Brandon"
+            >
+              <EmailIcon className="w-6 h-6" />
+            </SocialLink>
           </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-gray-500 dark:text-gray-500 text-xs">
-            Built with Next.js, TypeScript, and Tailwind CSS
-          </p>
         </div>
       </div>
     </footer>
@@ -50,8 +50,9 @@ function SocialLink({
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(href.startsWith('mailto:')
+        ? {}
+        : { target: '_blank', rel: 'noopener noreferrer' })}
       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
       {...props}
     >
