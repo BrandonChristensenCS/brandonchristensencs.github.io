@@ -73,7 +73,7 @@ export default function About() {
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -82,10 +82,10 @@ export default function About() {
           >
             <div className="relative rounded-lg overflow-hidden shadow-xl h-96 max-w-md mx-auto lg:mx-0">
               <Image
-                src="https://source.unsplash.com/random/600x600/?portrait"
+                src="/images/pfp.png"
                 alt="Brandon Christensen"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_20%]"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
