@@ -1,61 +1,35 @@
 'use client';
 
-import { motion } from '@/utils/client/motion';
+import { motion, AnimatePresence } from '@/utils/client/motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
 export default function About() {
-  // Skills data organized by category with years of experience
-  const skillsByCategory = {
-    'Programming Languages': [
-      { name: 'Java', years: 2 },
-      { name: 'Kotlin', years: 2 },
-      { name: 'Swift', years: 1 },
-      { name: 'Python', years: 2 },
-      { name: 'JavaScript', years: 1 },
-      { name: 'React', years: 1 },
-      { name: 'Next.js', years: 1 },
-      { name: 'HTML', years: 1 },
-      { name: 'CSS', years: 1 },
-      { name: 'Tailwind CSS', years: 1 },
-      { name: 'C++', years: 1 },
-      { name: 'PHP', years: 1 },
-      { name: 'Laravel', years: 1 },
-    ],
-    'Mobile Development': [
-      { name: 'Jetpack Compose', years: 2 },
-      { name: 'Kotlin Coroutines', years: 1.5 },
-      { name: 'XML Layouts', years: 2 },
-      { name: 'Amazon Web Services', years: 2 },
-      { name: 'Android SDK', years: 1 },
-      { name: 'MVVM', years: 1 },
-      { name: 'React Native', years: 1 },
-      { name: 'Firebase', years: 1 },
-      { name: 'Storyboard', years: 1 },
-      { name: 'SwiftUI', years: 1 },
-      { name: 'Dagger', years: 1 },
-      { name: 'ADB', years: 1 },
-      { name: 'Android Studio', years: 1 },
+  // Skills categories with descriptions
+  const skillCategories = [
+    {
+      name: 'Android Development',
+      description: 'Built native Android applications using Kotlin and Jetpack Compose. Implemented MVVM architecture, Kotlin Coroutines for asynchronous operations, and integrated with various AWS services. Created responsive and interactive UIs with both modern Compose and traditional XML layouts.',
+      technologies: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Coroutines', 'Android SDK', 'Dagger']
+    },
+    {
+      name: 'iOS Development',
+      description: 'Developed iOS applications using Swift and SwiftUI. Created intuitive user interfaces with Storyboard and programmatic UI approaches. Implemented core iOS frameworks and followed Apple Human Interface Guidelines for optimal user experience.',
+      technologies: ['Swift', 'SwiftUI', 'Storyboard', 'UIKit', 'Core Data']
+    },
+    {
+      name: 'Web Development',
+      description: 'Crafted responsive web applications using modern JavaScript frameworks like React and Next.js. Built backend systems with PHP/Laravel. Applied clean design principles with Tailwind CSS to create beautiful, functional interfaces.',
+      technologies: ['React', 'Next.js', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'PHP', 'Laravel']
+    },
+    {
+      name: 'IoT Devices',
+      description: 'Designed and implemented solutions for connected devices, focusing on seamless integration between hardware and software. Worked with various sensors, microcontrollers and network protocols to create smart, responsive systems.',
+      technologies: ['Python', 'C++', 'Embedded Systems', 'Bluetooth', 'MQTT']
+    }
+  ];
 
-    ],
-    'Other Technologies': [
-      { name: 'Git', years: 2 },
-      { name: 'GitFlow', years: 2 },
-      { name: 'GitHub', years: 1 },
-      { name: 'IntelliJ IDEA', years: 1 },
-      { name: 'Microsoft VS Code', years: 1 },
-      { name: 'Adobe XD', years: 1 },
-      { name: 'Adobe Illustrator', years: 1 },
-      { name: '', years: 1 },
-      { name: '', years: 1 },
-      { name: '', years: 1 },
-      { name: '', years: 1 },
-      { name: '', years: 1 },
-      { name: '', years: 1 },
-    ],
-  };
-  const categories = Object.keys(skillsByCategory);
-  const [activeTab, setActiveTab] = useState(categories[0]);
+  const [activeCategory, setActiveCategory] = useState('Android Development');
 
   return (
     <section id="about" className="py-24 bg-gray-50 dark:bg-gray-900">
@@ -116,40 +90,68 @@ export default function About() {
 
             <div className="space-y-6">
               <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Technical Skills
+                Technical Expertise
               </h4>
 
-              {/* Tabs for skill categories */}
-              <div className="flex space-x-4 mb-6">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    className={`px-4 py-2 rounded-full font-medium transition-colors duration-200 ${activeTab === cat ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}
-                    onClick={() => setActiveTab(cat)}
+              {/* Animated skill pills */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                {skillCategories.map((category, idx) => (
+                  <motion.button
+                    key={category.name}
+                    className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                      activeCategory === category.name
+                        ? 'bg-blue-600 text-white shadow-lg scale-105'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                    }`}
+                    onClick={() => setActiveCategory(
+                      activeCategory === category.name ? null : category.name
+                    )}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    {cat}
-                  </button>
+                    {category.name}
+                  </motion.button>
                 ))}
               </div>
 
-              <div className="space-y-4">
-                {skillsByCategory[activeTab].map((skill, idx) => (
+              {/* Animated description box */}
+              <AnimatePresence>
+                {activeCategory && (
                   <motion.div
-                    key={skill.name}
-                    className="flex items-center justify-between"
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                    initial={{ opacity: 0, height: 0, y: -10 }}
+                    animate={{ opacity: 1, height: 'auto', y: 0 }}
+                    exit={{ opacity: 0, height: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700 mb-4"
                   >
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      {skill.name}
-                    </span>
-                    <span className="ml-2 text-sm text-gray-900 dark:text-white">
-                      {skill.years} yrs
-                    </span>
+                    <h5 className="font-medium text-gray-900 dark:text-white mb-2">
+                      {skillCategories.find(c => c.name === activeCategory)?.name}
+                    </h5>
+                    <p className="text-gray-700 dark:text-gray-300 mb-3">
+                      {skillCategories.find(c => c.name === activeCategory)?.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {skillCategories
+                        .find(c => c.name === activeCategory)
+                        ?.technologies.map((tech, idx) => (
+                          <motion.span
+                            key={tech}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.2, delay: idx * 0.05 }}
+                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                          >
+                            {tech}
+                          </motion.span>
+                        ))}
+                    </div>
                   </motion.div>
-                ))}
-              </div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
         </div>
