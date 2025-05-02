@@ -35,9 +35,9 @@ export default function Header() {
             >
               Projects
             </Link>
-            <div className="ml-3">
+            {/* <div className="ml-3">
               <ThemeToggle />
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile menu button */}

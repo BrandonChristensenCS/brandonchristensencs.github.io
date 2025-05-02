@@ -2,10 +2,31 @@
 
 import { motion } from '@/utils/client/motion';
 import Button from '../ui/Button';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffsetY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center pt-16 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-[90vh] flex items-center pt-16 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      style={{
+        backgroundImage: 'url(/images/hero-bg.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: `center ${offsetY * 0.4}px`, // Parallax effect
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="absolute inset-0 bg-white/70 dark:bg-black/60 -z-10" />
       <div className="max-w-7xl mx-auto w-full">
         <div className="max-w-3xl">
           <motion.h1
@@ -48,12 +69,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Background abstract shapes */}
-      <div className="absolute top-0 right-0 -z-10 opacity-20 dark:opacity-10 transform translate-x-1/4 -translate-y-1/4">
-        <div className="w-[40rem] h-[40rem] rounded-full bg-gradient-to-r from-blue-400 to-purple-500 blur-3xl"></div>
-      </div>
-      <div className="absolute bottom-0 left-0 -z-10 opacity-20 dark:opacity-10 transform -translate-x-1/4 translate-y-1/4">
-        <div className="w-[40rem] h-[40rem] rounded-full bg-gradient-to-r from-green-300 to-blue-500 blur-3xl"></div>
+      {/* Attribution for background image */}
+      <div className="absolute bottom-2 right-4 text-xs text-gray-700 dark:text-gray-300 bg-white/60 dark:bg-black/40 px-2 py-1 rounded z-10">
+        Photo by <a href="https://unsplash.com/@tonypepe?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Tony Pepe</a> on <a href="https://unsplash.com/photos/a-computer-screen-with-a-bunch-of-code-on-it-6Gkj0zb2JXI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
       </div>
     </section>
   );
