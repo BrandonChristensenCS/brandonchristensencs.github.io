@@ -9,24 +9,74 @@ export default function About() {
   const skillCategories = [
     {
       name: 'Android Development',
-      description: 'Built native Android applications using Kotlin and Jetpack Compose. Implemented MVVM architecture, Kotlin Coroutines for asynchronous operations, and integrated with various AWS services. Created responsive and interactive UIs with both modern Compose and traditional XML layouts.',
-      technologies: ['Java', 'Kotlin', 'Jetpack Compose', 'MVVM', 'Coroutines', 'Android SDK', 'Dagger', 'Android Studio']
+      description:
+        'Developed Android apps using both Kotlin and Java, leveraging MVVM and MVC patterns. Deep experience with the Android SDK, Dagger for dependency injection, and Firebase (Crashlytics) for analytics and stability. Integrated AWS services and built responsive UIs with Jetpack Compose and XML layouts.',
+      technologies: [
+        'Kotlin',
+        'Java',
+        'MVVM',
+        'MVC',
+        'Android SDK',
+        'Dagger',
+        'Firebase',
+        'AWS',
+        'Jetpack Compose',
+        'Android Studio'
+      ]
     },
     {
       name: 'iOS Development',
-      description: 'Developed iOS applications using Swift and SwiftUI. Created intuitive user interfaces with Storyboard and programmatic UI approaches. Implemented core iOS frameworks and followed Apple Human Interface Guidelines for optimal user experience.',
-      technologies: ['Swift', 'SwiftUI', 'Storyboard', 'UIKit', 'Core Data', 'Xcode']
+      description:
+        'Built iOS applications primarily using Storyboard (UIKit) for UI, with additional experience in SwiftUI. Implemented core iOS frameworks, managed data with Core Data, and followed Apple’s Human Interface Guidelines for polished user experiences.',
+      technologies: [
+        'Swift',
+        'Storyboard',
+        'UIKit',
+        'SwiftUI',
+        'Core Data',
+        'Xcode'
+      ]
+    },
+    {
+      name: 'IoT Integration',
+      description:
+        'Specialty in implementing Bluetooth Low Energy (BLE) protocols and device communication on Android and iOS. Experienced with device firmware updates (DFU) and various BLE services.',
+      technologies: [
+        'Bluetooth LE',
+        'DFU',
+        'J-Link',
+        'Nordic Semiconductor',
+        'nRF Connect'
+      ]
+    },
+    {
+      name: 'Backend Development',
+      description:
+        'Designed and implemented RESTful APIs using AWS Lambda and Laravel, with experience in MySQL. Built scalable, cloud-based backends and integrated various AWS services to support robust application architectures.',
+      technologies: [
+        'Laravel',
+        'PHP',
+        'AWS Lambda',
+        'MySQL',
+        'AWS RDS',
+        'S3',
+        'REST APIs'
+      ]
     },
     {
       name: 'Web Development',
-      description: 'Crafted responsive web applications using modern JavaScript frameworks like React and Next.js. Built backend systems with PHP/Laravel. Applied clean design principles with Tailwind CSS to create beautiful, functional interfaces.',
-      technologies: ['React', 'Next.js', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'PHP', 'Laravel']
+      description:
+        'Developed and maintained this portfolio site and enterprise-grade React/Next.js web apps, including video conferencing solutions with Twilio. Focused on building responsive, accessible interfaces using Tailwind CSS and modern JavaScript/TypeScript.',
+      technologies: [
+        'React',
+        'Next.js',
+        'JavaScript',
+        'TypeScript',
+        'Twilio',
+        'Tailwind CSS',
+        'HTML/CSS'
+      ]
     },
-    {
-      name: 'IoT Devices',
-      description: 'Designed and implemented solutions for connected devices, focusing on seamless integration between hardware and software. Worked with various sensors, microcontrollers and network protocols to create smart, responsive systems.',
-      technologies: ['Python', 'C++', 'Embedded Systems', 'Bluetooth', 'MQTT']
-    }
   ];
 
   const [activeCategory, setActiveCategory] = useState('Android Development');
