@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import React from 'react';
 import { GitHubIcon, LinkedInIcon, EmailIcon } from '@/components/ui/Icons';
 
 export default function Footer() {
@@ -50,7 +50,7 @@ function SocialLink({
   return (
     <a
       href={href}
-      {...(href.startsWith('mailto:')
+      {...(href && href.startsWith('mailto:')
         ? {}
         : { target: '_blank', rel: 'noopener noreferrer' })}
       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
@@ -58,16 +58,5 @@ function SocialLink({
     >
       {children}
     </a>
-  );
-}
-
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-    >
-      {children}
-    </Link>
   );
 }

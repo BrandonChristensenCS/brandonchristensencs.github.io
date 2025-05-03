@@ -10,12 +10,12 @@ export default function About() {
     {
       name: 'Android Development',
       description: 'Built native Android applications using Kotlin and Jetpack Compose. Implemented MVVM architecture, Kotlin Coroutines for asynchronous operations, and integrated with various AWS services. Created responsive and interactive UIs with both modern Compose and traditional XML layouts.',
-      technologies: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Coroutines', 'Android SDK', 'Dagger']
+      technologies: ['Java', 'Kotlin', 'Jetpack Compose', 'MVVM', 'Coroutines', 'Android SDK', 'Dagger', 'Android Studio']
     },
     {
       name: 'iOS Development',
       description: 'Developed iOS applications using Swift and SwiftUI. Created intuitive user interfaces with Storyboard and programmatic UI approaches. Implemented core iOS frameworks and followed Apple Human Interface Guidelines for optimal user experience.',
-      technologies: ['Swift', 'SwiftUI', 'Storyboard', 'UIKit', 'Core Data']
+      technologies: ['Swift', 'SwiftUI', 'Storyboard', 'UIKit', 'Core Data', 'Xcode']
     },
     {
       name: 'Web Development',
@@ -78,13 +78,13 @@ export default function About() {
             </h3>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              I'm a passionate developer focused on creating clean, user-friendly applications.
+              I&apos;m a passionate developer focused on creating clean, user-friendly applications.
               With a strong foundation in computer science principles and modern development
               practices, I enjoy solving complex problems and bringing ideas to life through code.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              When I'm not coding, you can find me exploring new technologies, contributing to
+              When I&apos;m not coding, you can find me exploring new technologies, contributing to
               open-source projects, or expanding my knowledge through continuous learning.
             </p>
 
@@ -104,7 +104,7 @@ export default function About() {
                         : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                     }`}
                     onClick={() => setActiveCategory(
-                      activeCategory === category.name ? null : category.name
+                      activeCategory === category.name ? '' : category.name
                     )}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

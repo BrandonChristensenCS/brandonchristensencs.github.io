@@ -81,7 +81,7 @@ export default function Projects() {
           </motion.h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-            Here are some projects I've worked on. Each one has taught me valuable skills and
+            Here are some projects I&apos;ve worked on. Each one has taught me valuable skills and
             helped me grow as a developer.
           </p>
         </div>
