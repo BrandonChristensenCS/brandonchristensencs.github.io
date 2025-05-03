@@ -20,7 +20,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-[90vh] flex items-center pt-16 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
       style={{
-        backgroundImage: 'url(/images/hero-bg.jpg)',
+        backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/images/hero-bg.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: `center ${offsetY * 0.4}px`, // Parallax effect
         backgroundRepeat: 'no-repeat',
