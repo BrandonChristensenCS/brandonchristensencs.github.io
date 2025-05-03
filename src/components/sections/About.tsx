@@ -132,7 +132,7 @@ export default function About() {
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Outside of programming, I&apos;m an avid Dungeons & Dragons player who loves getting immersed in collaborative storytelling. Whether it&apos;s exploring a new framework or a new campaign setting, I&apos;m always looking for my next creative challenge.
+              Outside of programming, I&apos;m an avid Dungeons & Dragons player who loves being immersed in collaborative storytelling. Whether it&apos;s exploring a new framework or a new campaign setting, I&apos;m always looking for my next creative challenge.
             </p>
 
             <div className="space-y-6">
