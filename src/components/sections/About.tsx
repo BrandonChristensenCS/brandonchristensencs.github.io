@@ -78,14 +78,11 @@ export default function About() {
             </h3>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              I&apos;m a passionate developer focused on creating clean, user-friendly applications.
-              With a strong foundation in computer science principles and modern development
-              practices, I enjoy solving complex problems and bringing ideas to life through code.
+              I&apos;m an engineer who enjoys building intuitive, well-structured applications that solve real problems. With a strong foundation in computer science and a passion for thoughtful design, I focus on writing clean, maintainable, and accessible code across a range of platforms.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              When I&apos;m not coding, you can find me exploring new technologies, contributing to
-              open-source projects, or expanding my knowledge through continuous learning.
+              Outside of programming, I&apos;m an avid Dungeons & Dragons player who loves getting immersed in collaborative storytelling. Whether it&apos;s exploring a new framework or a new campaign setting, I&apos;m always looking for my next creative challenge.
             </p>
 
             <div className="space-y-6">
