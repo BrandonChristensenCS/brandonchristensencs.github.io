@@ -9,9 +9,9 @@ export default function Projects() {
     {
       id: 1,
       title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.',
-      imageSrc: 'https://source.unsplash.com/random/800x600/?portfolio',
-      tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Hosted on GitHub Pages'],
+      description: 'My personal portfolio website, designed and developed to showcase my work and skills.',
+      imageSrc: '/images/hero-bg.jpg',
+      tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Hosted via GitHub Pages'],
       links: [
         {
           url: 'https://github.com/brandonchristensencs/brandonchristensencs.github.io',
@@ -19,13 +19,35 @@ export default function Projects() {
           icon: 'github' as const,
         },
       ],
+      overlay: (
+        <div className="absolute bottom-2 right-4 text-xs text-gray-700 dark:text-gray-300 bg-white/60 dark:bg-black/40 px-2 py-1 rounded z-10">
+          Photo by{' '}
+          <a
+            href="https://unsplash.com/@tonypepe?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Tony Pepe
+          </a>{' '}
+          on{' '}
+          <a
+            href="https://unsplash.com/photos/a-computer-screen-with-a-bunch-of-code-on-it-6Gkj0zb2JXI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Unsplash
+          </a>
+        </div>
+      ),
     },
     {
       id: 2,
       title: 'Silkymitts',
-      description: 'Companion app for the Silkymitts Hockey Ball and Stick Sensor.',
-      imageSrc: 'https://source.unsplash.com/random/800x600/?ecommerce',
-      tags: ['Closed Source', 'Native Android', 'Native iOS', 'Bluetooth Low Energy'],
+      description: 'Led development of the companion app for the Silkymitts Hockey Ball and Stick Sensor during my tenure at Paradigm IoT, LLC.',
+      imageSrc: '/images/silkymitts_logo.png',
+      tags: ['Closed Source', 'Native Android', 'Native iOS', 'IoT', 'Bluetooth Low Energy (BLE)'],
       links: [
         {
           url: 'https://silkymittsball.com/',
@@ -43,6 +65,19 @@ export default function Projects() {
           icon: 'appstore' as const,
         },
       ],
+      overlay: (
+        <div className="absolute bottom-2 right-4 text-xs text-gray-700 dark:text-gray-300 bg-white/60 dark:bg-black/40 px-2 py-1 rounded z-10">
+          Photo by{' '}
+          <a
+            href="https://silkymittsball.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            DML LLC / Paradigm IoT
+          </a>
+        </div>
+      ),
     },
     // {
     //   id: 3,
@@ -125,6 +160,7 @@ export default function Projects() {
                 tags={project.tags}
                 links={project.links}
                 className="w-full h-full flex flex-col"
+                overlay={project.overlay}
               />
             </motion.div>
           ))}

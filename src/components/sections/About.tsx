@@ -10,18 +10,15 @@ export default function About() {
     {
       name: 'Android Development',
       description:
-        'Comprehensive expertise in Android development with Kotlin and Java, applying MVVM and MVC architectures for scalable codebases. Proficient in building performant, responsive UIs with Jetpack Compose and XML layouts. Skilled in Android Studio profiling and optimization, dependency injection with Dagger, and full integration of Firebase Crashlytics for real-time stability monitoring. Experience includes leveraging AWS services within mobile applications, cross-platform development with React Native, and automating end-to-end tests using Appium.',
+        'Comprehensive expertise in Android development with Kotlin and Java, applying MVVM and MVC patterns for scalable codebases. Proficient in building performant, responsive UIs with Jetpack Compose and XML layouts. Skilled in Android Studio profiling and optimization, dependency injection with Dagger, and full integration of Firebase Crashlytics for real-time stability monitoring. Experience includes leveraging AWS services within mobile applications, cross-platform development with React Native, and automating end-to-end tests using Appium.',
       technologies: [
         'Kotlin',
         'Java',
-        'MVVM',
-        'MVC',
-        'Android SDK',
-        'Dagger',
-        'Firebase',
-        'AWS',
         'Jetpack Compose',
-        'Android Studio'
+        'Coroutines',
+        'Android SDK',
+        'AWS',
+        'Play Store',
       ]
     },
     {
@@ -32,10 +29,8 @@ export default function About() {
         'Swift',
         'Storyboard',
         'UIKit',
-        'SwiftUI',
-        'Core Data',
         'Xcode',
-        'Firebase',
+        'AWS',
         'App Store',
       ]
     },
@@ -44,7 +39,7 @@ export default function About() {
       description:
         'Specialized in implementing Bluetooth Low Energy (BLE) communication protocols on both Android and iOS. Experienced in writing robust BLE client logic, handling peripheral interactions, characteristic parsing, GATT service management, and cross-platform solutions. Proficient in executing device firmware updates (DFU), ensuring reliable over-the-air upgrades. Proficient with Nordic Semiconductor\'s SDK and using SEGGER tools for device flashing, debugging, and low-level analysis.',
       technologies: [
-        'Bluetooth LE',
+        'BLE',
         'DFU',
         'J-Link',
         'Nordic Semiconductor',
@@ -56,13 +51,15 @@ export default function About() {
       description:
         'Extensive experience architecting and deploying scalable, cloud-native backends using AWS Lambda and Laravel. Proficient in designing RESTful APIs, integrating MySQL databases, and leveraging AWS services such as RDS and S3 for robust data management. Skilled in implementing secure authentication, optimizing query performance, and automating deployment pipelines to ensure reliability and maintainability across distributed systems.',
       technologies: [
+        'AWS Lambda',
         'Laravel',
         'PHP',
-        'AWS Lambda',
         'MySQL',
         'AWS RDS',
         'S3',
-        'REST APIs'
+        'REST APIs',
+        'Docker',
+        'CI/CD',
       ]
     },
     {
@@ -70,13 +67,13 @@ export default function About() {
       description:
         'Proficient in building modern, responsive web applications with React and Next.js, focusing on maintainable architectures and seamless user experiences. Experienced in developing enterprise-grade solutions, including real-time video conferencing leveraging Twilio, and implementing accessible, performant interfaces using Tailwind CSS and TypeScript. Skilled in full-stack development, continuous integration, and optimizing web performance for diverse audiences.',
       technologies: [
-        'React',
-        'Next.js',
         'JavaScript',
         'TypeScript',
-        'Twilio',
+        'React',
+        'Next.js',
+        'HTML/CSS',
         'Tailwind CSS',
-        'HTML/CSS'
+        'REST APIs'
       ]
     },
   ];

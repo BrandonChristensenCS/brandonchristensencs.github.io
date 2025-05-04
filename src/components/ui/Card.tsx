@@ -17,6 +17,7 @@ interface CardProps {
   imageSrc: string;
   tags: string[];
   links?: Link[];
+  overlay?: React.ReactNode;
 }
 
 export default function Card({
@@ -26,6 +27,7 @@ export default function Card({
   tags,
   links = [],
   className = '',
+  overlay,
 }: CardProps & { className?: string }) {
   // Consistent base button style for all buttons
   const baseBtn =
@@ -134,6 +136,7 @@ export default function Card({
         ) : (
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 animate-pulse"></div>
         )}
+        {overlay}
       </div>
 
       <div className="p-5 flex flex-col flex-1">
