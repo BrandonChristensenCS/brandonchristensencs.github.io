@@ -44,7 +44,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Engineer by day, tea drinker by choice. I got my start in Las Vegas and now call Montana home. I care about making technology easier to use, more reliable, and just a little more enjoyable.
+            I&apos;m an engineer who enjoys building intuitive, well-structured applications that solve real problems. With a strong foundation in computer science and a passion for thoughtful design, I focus on writing clean, maintainable, and accessible code across a range of platforms.
           </motion.p>
 
           <motion.div

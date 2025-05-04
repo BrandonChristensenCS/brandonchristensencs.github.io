@@ -128,7 +128,7 @@ export default function About() {
             </h3>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              I&apos;m an engineer who enjoys building intuitive, well-structured applications that solve real problems. With a strong foundation in computer science and a passion for thoughtful design, I focus on writing clean, maintainable, and accessible code across a range of platforms.
+              Engineer by day, tea drinker by choice. I got my start in Las Vegas and now call Montana home. I care about making technology easier to use, more reliable, and just a little more enjoyable.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
